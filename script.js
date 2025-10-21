@@ -1,113 +1,140 @@
 const questions = [
     // Goalies
-    {q: "What # does Adin Hill wear?", correct: "33", wrong: "40", cat: ["numbers"]},
-    {q: "What # does Akira Schmid wear?", correct: "40", wrong: "33", cat: ["numbers"]},
-    {q: "Which hand do both goalies catch with?", correct: "Left", wrong: "Right", cat: ["handedness"]},
-    {q: "Who wears #33?", correct: "Adin Hill", wrong: "Akira Schmid", cat: ["numbers"]},
-    {q: "Who wears #40?", correct: "Akira Schmid", wrong: "Adin Hill", cat: ["numbers"]},
-    {q: "What position does Adin Hill play?", correct: "G", wrong: "D", cat: ["position"]},
-    {q: "What position does Akira Schmid play?", correct: "G", wrong: "D", cat: ["position"]},
-    {q: "Which hand does Adin Hill catch with?", correct: "Left", wrong: "Right", cat: ["handedness"]},
-    {q: "Which hand does Akira Schmid catch with?", correct: "Left", wrong: "Right", cat: ["handedness"]},
+    {q: "What # does Adin Hill wear?", correct: "33", wrong: "40", cat: ["numbers", "goalies"]},
+    {q: "What # does Akira Schmid wear?", correct: "40", wrong: "33", cat: ["numbers", "goalies"]},
+    {q: "Which hand do both goalies catch with?", correct: "Left", wrong: "Right", cat: ["handedness", "goalies"]},
+    {q: "Who wears #33?", correct: "Adin Hill", wrong: "Akira Schmid", cat: ["numbers", "goalies"]},
+    {q: "Who wears #40?", correct: "Akira Schmid", wrong: "Adin Hill", cat: ["numbers", "goalies"]},
+    {q: "What position does Adin Hill play?", correct: "G", wrong: "F", cat: ["position", "goalies"]},
+    {q: "What position does Akira Schmid play?", correct: "G", wrong: "D", cat: ["position", "goalies"]},
+    {q: "Which hand does Adin Hill catch with?", correct: "Left", wrong: "Right", cat: ["handedness", "goalies"]},
+    {q: "Which hand does Akira Schmid catch with?", correct: "Left", wrong: "Right", cat: ["handedness", "goalies"]},
+    {q: "Which goalie wears the lower number?", correct: "Adin Hill", wrong: "Akira Schmid", cat: ["numbers", "goalies"]},
+    {q: "Which goalie wears the higher number?", correct: "Akira Schmid", wrong: "Adin Hill", cat: ["numbers", "goalies"]},
+    {q: "What # does Hill wear?", correct: "33", wrong: "40", cat: ["numbers", "goalies"]},
+    {q: "What # does Schmid wear?", correct: "40", wrong: "33", cat: ["numbers", "goalies"]},
+    {q: "Hill's number?", correct: "33", wrong: "40", cat: ["numbers", "goalies"]},
+    {q: "Schmid's number?", correct: "40", wrong: "33", cat: ["numbers", "goalies"]},
+    {q: "Hill catches with which hand?", correct: "Left", wrong: "Right", cat: ["handedness", "goalies"]},
+    {q: "Schmid catches with which hand?", correct: "Left", wrong: "Right", cat: ["handedness", "goalies"]},
+    {q: "What position is Hill?", correct: "G", wrong: "D", cat: ["position", "goalies"]},
+    {q: "What position is Schmid?", correct: "G", wrong: "F", cat: ["position", "goalies"]},
+    {q: "Who is #33?", correct: "Adin Hill", wrong: "Akira Schmid", cat: ["numbers", "goalies"]},
 
     // Defense
-    {q: "What # does Zach Whitecloud wear?", correct: "2", wrong: "3", cat: ["numbers"]},
-    {q: "What # does Brayden McNabb wear?", correct: "3", wrong: "2", cat: ["numbers"]},
-    {q: "What # does Jeremy Lauzon wear?", correct: "5", wrong: "6", cat: ["numbers"]},
-    {q: "What # does Kaedan Korczak wear?", correct: "6", wrong: "5", cat: ["numbers"]},
-    {q: "What # does Noah Hanifin wear?", correct: "15", wrong: "17", cat: ["numbers"]},
-    {q: "What # does Ben Hutton wear?", correct: "17", wrong: "15", cat: ["numbers"]},
-    {q: "What # does Shea Theodore wear?", correct: "27", wrong: "23", cat: ["numbers"]},
-    {q: "Who wears #2?", correct: "Zach Whitecloud", wrong: "Brayden McNabb", cat: ["numbers"]},
-    {q: "Who wears #3?", correct: "Brayden McNabb", wrong: "Zach Whitecloud", cat: ["numbers"]},
-    {q: "Who wears #5?", correct: "Jeremy Lauzon", wrong: "Kaedan Korczak", cat: ["numbers"]},
-    {q: "Who wears #6?", correct: "Kaedan Korczak", wrong: "Jeremy Lauzon", cat: ["numbers"]},
-    {q: "Who wears #15?", correct: "Noah Hanifin", wrong: "Ben Hutton", cat: ["numbers"]},
-    {q: "Who wears #17?", correct: "Ben Hutton", wrong: "Noah Hanifin", cat: ["numbers"]},
-    {q: "Who wears #27?", correct: "Shea Theodore", wrong: "Noah Hanifin", cat: ["numbers"]},
-    {q: "Which two defensemen shoot right?", correct: "Whitecloud & Korczak", wrong: "Theodore & Hanifin", cat: ["handedness"]},
-    {q: "How many defensemen shoot left vs right?", correct: "5 Left, 2 Right", wrong: "4 Left, 3 Right", cat: ["handedness"]},
-    {q: "What position does Zach Whitecloud play?", correct: "D", wrong: "C", cat: ["position"]},
-    {q: "What position does Brayden McNabb play?", correct: "D", wrong: "LW", cat: ["position"]},
-    {q: "What position does Jeremy Lauzon play?", correct: "D", wrong: "RW", cat: ["position"]},
-    {q: "What position does Kaedan Korczak play?", correct: "D", wrong: "C", cat: ["position"]},
-    {q: "What position does Noah Hanifin play?", correct: "D", wrong: "LW", cat: ["position"]},
-    {q: "What position does Ben Hutton play?", correct: "D", wrong: "C", cat: ["position"]},
-    {q: "What position does Shea Theodore play?", correct: "D", wrong: "RW", cat: ["position"]},
-    {q: "Which side does Zach Whitecloud shoot?", correct: "Right", wrong: "Left", cat: ["handedness"]},
-    {q: "Which side does Brayden McNabb shoot?", correct: "Left", wrong: "Right", cat: ["handedness"]},
-    {q: "Which side does Jeremy Lauzon shoot?", correct: "Left", wrong: "Right", cat: ["handedness"]},
-    {q: "Which side does Kaedan Korczak shoot?", correct: "Right", wrong: "Left", cat: ["handedness"]},
-    {q: "Which side does Noah Hanifin shoot?", correct: "Left", wrong: "Right", cat: ["handedness"]},
-    {q: "Which side does Ben Hutton shoot?", correct: "Left", wrong: "Right", cat: ["handedness"]},
-    {q: "Which side does Shea Theodore shoot?", correct: "Left", wrong: "Right", cat: ["handedness"]},
+    {q: "What # does Zach Whitecloud wear?", correct: "2", wrong: "3", cat: ["numbers", "defense"]},
+    {q: "What # does Brayden McNabb wear?", correct: "3", wrong: "2", cat: ["numbers", "defense"]},
+    {q: "What # does Jeremy Lauzon wear?", correct: "5", wrong: "6", cat: ["numbers", "defense"]},
+    {q: "What # does Kaedan Korczak wear?", correct: "6", wrong: "5", cat: ["numbers", "defense"]},
+    {q: "What # does Noah Hanifin wear?", correct: "15", wrong: "17", cat: ["numbers", "defense"]},
+    {q: "What # does Ben Hutton wear?", correct: "17", wrong: "15", cat: ["numbers", "defense"]},
+    {q: "What # does Shea Theodore wear?", correct: "27", wrong: "15", cat: ["numbers", "defense"]},
+    {q: "Who wears #2?", correct: "Zach Whitecloud", wrong: "Brayden McNabb", cat: ["numbers", "defense"]},
+    {q: "Who wears #3?", correct: "Brayden McNabb", wrong: "Jeremy Lauzon", cat: ["numbers", "defense"]},
+    {q: "Who wears #5?", correct: "Jeremy Lauzon", wrong: "Kaedan Korczak", cat: ["numbers", "defense"]},
+    {q: "Who wears #6?", correct: "Kaedan Korczak", wrong: "Noah Hanifin", cat: ["numbers", "defense"]},
+    {q: "Who wears #15?", correct: "Noah Hanifin", wrong: "Ben Hutton", cat: ["numbers", "defense"]},
+    {q: "Who wears #17?", correct: "Ben Hutton", wrong: "Shea Theodore", cat: ["numbers", "defense"]},
+    {q: "Who wears #27?", correct: "Shea Theodore", wrong: "Noah Hanifin", cat: ["numbers", "defense"]},
+    {q: "Which hand does Whitecloud shoot?", correct: "Right", wrong: "Left", cat: ["handedness", "defense"]},
+    {q: "Which hand does McNabb shoot?", correct: "Left", wrong: "Right", cat: ["handedness", "defense"]},
+    {q: "Which hand does Lauzon shoot?", correct: "Left", wrong: "Right", cat: ["handedness", "defense"]},
+    {q: "Which hand does Korczak shoot?", correct: "Right", wrong: "Left", cat: ["handedness", "defense"]},
+    {q: "Which hand does Hanifin shoot?", correct: "Left", wrong: "Right", cat: ["handedness", "defense"]},
+    {q: "Which hand does Hutton shoot?", correct: "Left", wrong: "Right", cat: ["handedness", "defense"]},
+    {q: "Which hand does Theodore shoot?", correct: "Left", wrong: "Right", cat: ["handedness", "defense"]},
+    {q: "How many defensemen shoot right?", correct: "2", wrong: "3", cat: ["handedness", "defense"]},
+    {q: "How many defensemen shoot left?", correct: "5", wrong: "4", cat: ["handedness", "defense"]},
+    {q: "Whitecloud's number?", correct: "2", wrong: "3", cat: ["numbers", "defense"]},
+    {q: "McNabb's number?", correct: "3", wrong: "5", cat: ["numbers", "defense"]},
+    {q: "Lauzon's number?", correct: "5", wrong: "6", cat: ["numbers", "defense"]},
+    {q: "Korczak's number?", correct: "6", wrong: "5", cat: ["numbers", "defense"]},
+    {q: "Hanifin's number?", correct: "15", wrong: "17", cat: ["numbers", "defense"]},
+    {q: "Hutton's number?", correct: "17", wrong: "15", cat: ["numbers", "defense"]},
+    {q: "Theodore's number?", correct: "27", wrong: "15", cat: ["numbers", "defense"]},
+    {q: "Who is #2?", correct: "Whitecloud", wrong: "McNabb", cat: ["numbers", "defense"]},
+    {q: "Who is #3?", correct: "McNabb", wrong: "Lauzon", cat: ["numbers", "defense"]},
+    {q: "Who is #5?", correct: "Lauzon", wrong: "Korczak", cat: ["numbers", "defense"]},
+    {q: "Who is #6?", correct: "Korczak", wrong: "Hanifin", cat: ["numbers", "defense"]},
+    {q: "Who is #15?", correct: "Hanifin", wrong: "Hutton", cat: ["numbers", "defense"]},
+    {q: "Which two defensemen shoot right?", correct: "Whitecloud & Korczak", wrong: "Theodore & Hanifin", cat: ["handedness", "defense"]},
+    {q: "How many defensemen shoot left vs right?", correct: "5 Left, 2 Right", wrong: "4 Left, 3 Right", cat: ["handedness", "defense"]},
+    {q: "What position does Zach Whitecloud play?", correct: "D", wrong: "C", cat: ["position", "defense"]},
+    {q: "What position does Brayden McNabb play?", correct: "D", wrong: "LW", cat: ["position", "defense"]},
+    {q: "What position does Jeremy Lauzon play?", correct: "D", wrong: "RW", cat: ["position", "defense"]},
+    {q: "What position does Kaedan Korczak play?", correct: "D", wrong: "C", cat: ["position", "defense"]},
+    {q: "What position does Noah Hanifin play?", correct: "D", wrong: "LW", cat: ["position", "defense"]},
+    {q: "What position does Ben Hutton play?", correct: "D", wrong: "C", cat: ["position", "defense"]},
+    {q: "What position does Shea Theodore play?", correct: "D", wrong: "RW", cat: ["position", "defense"]},
+    {q: "Which side does Zach Whitecloud shoot?", correct: "Right", wrong: "Left", cat: ["handedness", "defense"]},
+    {q: "Which side does Brayden McNabb shoot?", correct: "Left", wrong: "Right", cat: ["handedness", "defense"]},
+    {q: "Which side does Jeremy Lauzon shoot?", correct: "Left", wrong: "Right", cat: ["handedness", "defense"]},
+    {q: "Which side does Kaedan Korczak shoot?", correct: "Right", wrong: "Left", cat: ["handedness", "defense"]},
+    {q: "Which side does Noah Hanifin shoot?", correct: "Left", wrong: "Right", cat: ["handedness", "defense"]},
+    {q: "Which side does Ben Hutton shoot?", correct: "Left", wrong: "Right", cat: ["handedness", "defense"]},
+    {q: "Which side does Shea Theodore shoot?", correct: "Left", wrong: "Right", cat: ["handedness", "defense"]},
 
-    // Left Wing
-    {q: "What # does Brandon Saad wear?", correct: "20", wrong: "23", cat: ["numbers"]},
-    {q: "What # does Cole Reinhardt wear?", correct: "23", wrong: "20", cat: ["numbers"]},
-    {q: "What # does Ivan Barbashev wear?", correct: "49", wrong: "48", cat: ["numbers"]},
-    {q: "Who wears #20?", correct: "Brandon Saad", wrong: "Cole Reinhardt", cat: ["numbers"]},
-    {q: "Who wears #23?", correct: "Cole Reinhardt", wrong: "Brandon Saad", cat: ["numbers"]},
-    {q: "Who wears #49?", correct: "Ivan Barbashev", wrong: "Tomas Hertl", cat: ["numbers"]},
-    {q: "How many left wingers shoot left vs right?", correct: "3 Left, 0 Right", wrong: "2 Left, 1 Right", cat: ["handedness"]},
-    {q: "What position does Brandon Saad play?", correct: "LW", wrong: "C", cat: ["position"]},
-    {q: "What position does Cole Reinhardt play?", correct: "LW", wrong: "RW", cat: ["position"]},
-    {q: "What position does Ivan Barbashev play?", correct: "LW", wrong: "C", cat: ["position"]},
-    {q: "Which side does Brandon Saad shoot?", correct: "Left", wrong: "Right", cat: ["handedness"]},
-    {q: "Which side does Cole Reinhardt shoot?", correct: "Left", wrong: "Right", cat: ["handedness"]},
-    {q: "Which side does Ivan Barbashev shoot?", correct: "Left", wrong: "Right", cat: ["handedness"]},
-
-    // Center
-    {q: "What # does Jack Eichel wear?", correct: "9", wrong: "10", cat: ["numbers"]},
-    {q: "What # does Colton Sissons wear?", correct: "10", wrong: "9", cat: ["numbers"]},
-    {q: "What # does Brett Howden wear?", correct: "21", wrong: "23", cat: ["numbers"]},
-    {q: "What # does Tomas Hertl wear?", correct: "48", wrong: "49", cat: ["numbers"]},
-    {q: "What # does William Karlsson wear?", correct: "71", wrong: "61", cat: ["numbers"]},
-    {q: "Who wears #9?", correct: "Jack Eichel", wrong: "Colton Sissons", cat: ["numbers"]},
-    {q: "Who wears #10?", correct: "Colton Sissons", wrong: "Jack Eichel", cat: ["numbers"]},
-    {q: "Who wears #21?", correct: "Brett Howden", wrong: "Brandon Saad", cat: ["numbers"]},
-    {q: "Who wears #48?", correct: "Tomas Hertl", wrong: "Ivan Barbashev", cat: ["numbers"]},
-    {q: "Who wears #71?", correct: "William Karlsson", wrong: "Mark Stone", cat: ["numbers"]},
-    {q: "Which two centers shoot right?", correct: "Eichel & Sissons", wrong: "Hertl & Karlsson", cat: ["handedness"]},
-    {q: "How many centers shoot left vs right?", correct: "3 Left, 2 Right", wrong: "2 Left, 3 Right", cat: ["handedness"]},
-    {q: "What position does Jack Eichel play?", correct: "C", wrong: "RW", cat: ["position"]},
-    {q: "What position does Colton Sissons play?", correct: "C", wrong: "LW", cat: ["position"]},
-    {q: "What position does Brett Howden play?", correct: "C", wrong: "RW", cat: ["position"]},
-    {q: "What position does Tomas Hertl play?", correct: "C", wrong: "LW", cat: ["position"]},
-    {q: "What position does William Karlsson play?", correct: "C", wrong: "RW", cat: ["position"]},
-    {q: "Which side does Jack Eichel shoot?", correct: "Right", wrong: "Left", cat: ["handedness"]},
-    {q: "Which side does Colton Sissons shoot?", correct: "Right", wrong: "Left", cat: ["handedness"]},
-    {q: "Which side does Brett Howden shoot?", correct: "Left", wrong: "Right", cat: ["handedness"]},
-    {q: "Which side does Tomas Hertl shoot?", correct: "Left", wrong: "Right", cat: ["handedness"]},
-    {q: "Which side does William Karlsson shoot?", correct: "Left", wrong: "Right", cat: ["handedness"]},
-
-    // Right Wing
-    {q: "What # does Pavel Dorofeyev wear?", correct: "16", wrong: "19", cat: ["numbers"]},
-    {q: "What # does Reilly Smith wear?", correct: "19", wrong: "16", cat: ["numbers"]},
-    {q: "What # does Alexander Holtz wear?", correct: "26", wrong: "27", cat: ["numbers"]},
-    {q: "What # does Keegan Kolesar wear?", correct: "55", wrong: "61", cat: ["numbers"]},
-    {q: "What # does Mark Stone wear?", correct: "61", wrong: "71", cat: ["numbers"]},
-    {q: "What # does Mitch Marner wear?", correct: "93", wrong: "61", cat: ["numbers"]},
-    {q: "Who wears #16?", correct: "Pavel Dorofeyev", wrong: "Reilly Smith", cat: ["numbers"]},
-    {q: "Who wears #19?", correct: "Reilly Smith", wrong: "Pavel Dorofeyev", cat: ["numbers"]},
-    {q: "Who wears #26?", correct: "Alexander Holtz", wrong: "Shea Theodore", cat: ["numbers"]},
-    {q: "Who wears #55?", correct: "Keegan Kolesar", wrong: "Mark Stone", cat: ["numbers"]},
-    {q: "Who wears #61?", correct: "Mark Stone", wrong: "William Karlsson", cat: ["numbers"]},
-    {q: "Who wears #93?", correct: "Mitch Marner", wrong: "Mark Stone", cat: ["numbers"]},
-    {q: "Which right wingers shoot right?", correct: "Holtz, Kolesar, Stone, Marner", wrong: "All shoot right", cat: ["handedness"]},
-    {q: "How many right wingers shoot left vs right?", correct: "2 Left, 4 Right", wrong: "3 Left, 3 Right", cat: ["handedness"]},
-    {q: "What position does Pavel Dorofeyev play?", correct: "RW", wrong: "LW", cat: ["position"]},
-    {q: "What position does Reilly Smith play?", correct: "RW", wrong: "C", cat: ["position"]},
-    {q: "What position does Alexander Holtz play?", correct: "RW", wrong: "D", cat: ["position"]},
-    {q: "What position does Keegan Kolesar play?", correct: "RW", wrong: "LW", cat: ["position"]},
-    {q: "What position does Mark Stone play?", correct: "RW", wrong: "C", cat: ["position"]},
-    {q: "What position does Mitch Marner play?", correct: "RW", wrong: "C", cat: ["position"]},
-    {q: "Which side does Pavel Dorofeyev shoot?", correct: "Left", wrong: "Right", cat: ["handedness"]},
-    {q: "Which side does Reilly Smith shoot?", correct: "Left", wrong: "Right", cat: ["handedness"]},
-    {q: "Which side does Alexander Holtz shoot?", correct: "Right", wrong: "Left", cat: ["handedness"]},
-    {q: "Which side does Keegan Kolesar shoot?", correct: "Right", wrong: "Left", cat: ["handedness"]},
-    {q: "Which side does Mark Stone shoot?", correct: "Right", wrong: "Left", cat: ["handedness"]},
-    {q: "Which side does Mitch Marner shoot?", correct: "Right", wrong: "Left", cat: ["handedness"]}
+    // Forwards (consolidated from classic version)
+    {q: "What # does Tanner Pearson wear?", correct: "70", wrong: "71", cat: ["numbers", "forwards"]},
+    {q: "What # does William Karlsson wear?", correct: "71", wrong: "70", cat: ["numbers", "forwards"]},
+    {q: "What # does Ivan Barbashev wear?", correct: "49", wrong: "19", cat: ["numbers", "forwards"]},
+    {q: "What # does Brett Howden wear?", correct: "21", wrong: "19", cat: ["numbers", "forwards"]},
+    {q: "What # does Nicolas Roy wear?", correct: "10", wrong: "19", cat: ["numbers", "forwards"]},
+    {q: "What # does Pavel Dorofeyev wear?", correct: "16", wrong: "19", cat: ["numbers", "forwards"]},
+    {q: "What # does Alexander Holtz wear?", correct: "19", wrong: "16", cat: ["numbers", "forwards"]},
+    {q: "What # does Victor Olofsson wear?", correct: "95", wrong: "19", cat: ["numbers", "forwards"]},
+    {q: "What # does Keegan Kolesar wear?", correct: "55", wrong: "19", cat: ["numbers", "forwards"]},
+    {q: "What # does Cole Schwindt wear?", correct: "72", wrong: "19", cat: ["numbers", "forwards"]},
+    {q: "What # does Tanner Laczynski wear?", correct: "22", wrong: "21", cat: ["numbers", "forwards"]},
+    {q: "What # does Jack Eichel wear?", correct: "9", wrong: "10", cat: ["numbers", "forwards"]},
+    {q: "What # does Mark Stone wear?", correct: "61", wrong: "71", cat: ["numbers", "forwards"]},
+    {q: "Who wears #70?", correct: "Tanner Pearson", wrong: "William Karlsson", cat: ["numbers", "forwards"]},
+    {q: "Who wears #71?", correct: "William Karlsson", wrong: "Tanner Pearson", cat: ["numbers", "forwards"]},
+    {q: "Who wears #49?", correct: "Ivan Barbashev", wrong: "Brett Howden", cat: ["numbers", "forwards"]},
+    {q: "Who wears #21?", correct: "Brett Howden", wrong: "Tanner Laczynski", cat: ["numbers", "forwards"]},
+    {q: "Who wears #10?", correct: "Nicolas Roy", wrong: "Jack Eichel", cat: ["numbers", "forwards"]},
+    {q: "Who wears #16?", correct: "Pavel Dorofeyev", wrong: "Alexander Holtz", cat: ["numbers", "forwards"]},
+    {q: "Who wears #19?", correct: "Alexander Holtz", wrong: "Pavel Dorofeyev", cat: ["numbers", "forwards"]},
+    {q: "Who wears #95?", correct: "Victor Olofsson", wrong: "Keegan Kolesar", cat: ["numbers", "forwards"]},
+    {q: "Who wears #55?", correct: "Keegan Kolesar", wrong: "Cole Schwindt", cat: ["numbers", "forwards"]},
+    {q: "Who wears #72?", correct: "Cole Schwindt", wrong: "Tanner Pearson", cat: ["numbers", "forwards"]},
+    {q: "Who wears #22?", correct: "Tanner Laczynski", wrong: "Brett Howden", cat: ["numbers", "forwards"]},
+    {q: "Who wears #9?", correct: "Jack Eichel", wrong: "Nicolas Roy", cat: ["numbers", "forwards"]},
+    {q: "Who wears #61?", correct: "Mark Stone", wrong: "William Karlsson", cat: ["numbers", "forwards"]},
+    {q: "Which hand does Pearson shoot?", correct: "Left", wrong: "Right", cat: ["handedness", "forwards"]},
+    {q: "Which hand does Karlsson shoot?", correct: "Left", wrong: "Right", cat: ["handedness", "forwards"]},
+    {q: "Which hand does Barbashev shoot?", correct: "Left", wrong: "Right", cat: ["handedness", "forwards"]},
+    {q: "Which hand does Howden shoot?", correct: "Right", wrong: "Left", cat: ["handedness", "forwards"]},
+    {q: "Which hand does Roy shoot?", correct: "Right", wrong: "Left", cat: ["handedness", "forwards"]},
+    {q: "Which hand does Dorofeyev shoot?", correct: "Left", wrong: "Right", cat: ["handedness", "forwards"]},
+    {q: "Which hand does Holtz shoot?", correct: "Left", wrong: "Right", cat: ["handedness", "forwards"]},
+    {q: "Which hand does Olofsson shoot?", correct: "Right", wrong: "Left", cat: ["handedness", "forwards"]},
+    {q: "Which hand does Kolesar shoot?", correct: "Right", wrong: "Left", cat: ["handedness", "forwards"]},
+    {q: "Which hand does Schwindt shoot?", correct: "Right", wrong: "Left", cat: ["handedness", "forwards"]},
+    {q: "Which hand does Laczynski shoot?", correct: "Right", wrong: "Left", cat: ["handedness", "forwards"]},
+    {q: "Which hand does Eichel shoot?", correct: "Right", wrong: "Left", cat: ["handedness", "forwards"]},
+    {q: "Which hand does Stone shoot?", correct: "Right", wrong: "Left", cat: ["handedness", "forwards"]},
+    {q: "What position is Pearson?", correct: "F", wrong: "D", cat: ["position", "forwards"]},
+    {q: "What position is Karlsson?", correct: "F", wrong: "G", cat: ["position", "forwards"]},
+    {q: "What position is Barbashev?", correct: "F", wrong: "D", cat: ["position", "forwards"]},
+    {q: "What position is Howden?", correct: "F", wrong: "D", cat: ["position", "forwards"]},
+    {q: "What position is Roy?", correct: "F", wrong: "G", cat: ["position", "forwards"]},
+    {q: "What position is Dorofeyev?", correct: "F", wrong: "D", cat: ["position", "forwards"]},
+    {q: "What position is Holtz?", correct: "F", wrong: "D", cat: ["position", "forwards"]},
+    {q: "What position is Olofsson?", correct: "F", wrong: "G", cat: ["position", "forwards"]},
+    {q: "What position is Kolesar?", correct: "F", wrong: "D", cat: ["position", "forwards"]},
+    {q: "What position is Schwindt?", correct: "F", wrong: "D", cat: ["position", "forwards"]},
+    {q: "What position is Laczynski?", correct: "F", wrong: "G", cat: ["position", "forwards"]},
+    {q: "What position is Eichel?", correct: "F", wrong: "D", cat: ["position", "forwards"]},
+    {q: "What position is Stone?", correct: "F", wrong: "D", cat: ["position", "forwards"]},
+    {q: "How many forwards shoot right?", correct: "6", wrong: "7", cat: ["handedness", "forwards"]},
+    {q: "How many forwards shoot left?", correct: "7", wrong: "6", cat: ["handedness", "forwards"]},
+    {q: "Pearson's number?", correct: "70", wrong: "71", cat: ["numbers", "forwards"]},
+    {q: "Karlsson's number?", correct: "71", wrong: "70", cat: ["numbers", "forwards"]},
+    {q: "Barbashev's number?", correct: "49", wrong: "19", cat: ["numbers", "forwards"]},
+    {q: "Howden's number?", correct: "21", wrong: "22", cat: ["numbers", "forwards"]},
+    {q: "Roy's number?", correct: "10", wrong: "9", cat: ["numbers", "forwards"]},
+    {q: "Dorofeyev's number?", correct: "16", wrong: "19", cat: ["numbers", "forwards"]}
 ];
 
 let allQuestions = questions;
@@ -115,7 +142,8 @@ let activeQuestions = [];
 let shuffledQuestions = [];
 let questionStats = {};
 let userAnswers = {};
-let selectedCategories = ['numbers', 'handedness', 'position'];
+let selectedCategories = ['numbers', 'handedness', 'position', 'goalies', 'defense', 'forwards'];
+let selectedPalette = 'classic';
 
 // Load stats from localStorage
 function loadStats() {
@@ -127,6 +155,33 @@ function loadStats() {
             questionStats = {};
         }
     }
+}
+
+// Load palette preference
+function loadPalette() {
+    const saved = localStorage.getItem('colorPalette');
+    if (saved && (saved === 'classic' || saved === 'bold')) {
+        selectedPalette = saved;
+        applyPalette(selectedPalette);
+        document.getElementById('palette-' + selectedPalette).checked = true;
+    }
+}
+
+// Apply color palette
+function applyPalette(palette) {
+    if (palette === 'bold') {
+        document.body.classList.add('palette-bold');
+    } else {
+        document.body.classList.remove('palette-bold');
+    }
+}
+
+// Select palette
+function selectPalette(palette) {
+    selectedPalette = palette;
+    document.getElementById('palette-' + palette).checked = true;
+    applyPalette(palette);
+    localStorage.setItem('colorPalette', palette);
 }
 
 // Save stats to localStorage
@@ -145,9 +200,12 @@ function updateStartButton() {
     const numbersChecked = document.getElementById('cat-numbers').checked;
     const handednessChecked = document.getElementById('cat-handedness').checked;
     const positionChecked = document.getElementById('cat-position').checked;
+    const goaliesChecked = document.getElementById('cat-goalies').checked;
+    const defenseChecked = document.getElementById('cat-defense').checked;
+    const forwardsChecked = document.getElementById('cat-forwards').checked;
 
     const startBtn = document.getElementById('startBtn');
-    const anySelected = numbersChecked || handednessChecked || positionChecked;
+    const anySelected = numbersChecked || handednessChecked || positionChecked || goaliesChecked || defenseChecked || forwardsChecked;
 
     startBtn.disabled = !anySelected;
 
@@ -156,9 +214,13 @@ function updateStartButton() {
         if (numbersChecked) selectedCategories.push('numbers');
         if (handednessChecked) selectedCategories.push('handedness');
         if (positionChecked) selectedCategories.push('position');
+        if (goaliesChecked) selectedCategories.push('goalies');
+        if (defenseChecked) selectedCategories.push('defense');
+        if (forwardsChecked) selectedCategories.push('forwards');
 
+        // AND logic: question must have ALL selected categories
         const count = allQuestions.filter(q =>
-            q.cat.some(c => selectedCategories.includes(c))
+            selectedCategories.every(c => q.cat.includes(c))
         ).length;
 
         startBtn.textContent = `Start Quiz (${count} questions)`;
@@ -168,9 +230,9 @@ function updateStartButton() {
 }
 
 function startQuiz() {
-    // Filter questions by selected categories
+    // Filter questions by selected categories (AND logic)
     activeQuestions = allQuestions.filter(q =>
-        q.cat.some(c => selectedCategories.includes(c))
+        selectedCategories.every(c => q.cat.includes(c))
     );
 
     document.getElementById('startScreen').style.display = 'none';
@@ -341,8 +403,9 @@ Questions you got wrong will appear first when you shuffle the quiz!
     alert(statsMessage);
 }
 
-// Initialize: load stats from localStorage
+// Initialize: load stats and palette from localStorage
 loadStats();
+loadPalette();
 updateStartButton();
 
 document.getElementById('quizForm').addEventListener('submit', function(e) {
